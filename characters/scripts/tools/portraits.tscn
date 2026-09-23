@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ctt03lnp0dvju"]
+
+[ext_resource type="Script" uid="uid://dg1ywrodkgtrt" path="res://characters/scripts/tools/portraits.gd" id="1_diwwo"]
+[ext_resource type="Environment" uid="uid://ydhtubedx30n" path="res://environments/portraits.tres" id="2_kpo45"]
+
+[node name="PORTRAIT" type="Marker3D" unique_id=1992990287]
+script = ExtResource("1_diwwo")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=1129101137]
+remote_path = NodePath("../SubViewport/Camera3D")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1020165556]
+transparent_bg = true
+size = Vector2i(64, 64)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=1069616032]
+environment = ExtResource("2_kpo45")
+current = true
+fov = 30.0

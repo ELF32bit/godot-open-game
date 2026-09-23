@@ -1,0 +1,16 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+characters/maps/autosave
+characters/entities.fgd
+
+mapping/maps/autosave
+mapping/mapdata/*
+!mapping/mapdata/.import
+!mapping/mapdata/.gitkeep
+mapping/models/*
+!mapping/models/.gdignore
+!mapping/models/.gitkeep
+mapping/entities.fgd
+

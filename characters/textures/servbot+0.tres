@@ -1,0 +1,10 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://c2tnohg01bpyb"]
+
+[ext_resource type="Texture2D" uid="uid://bnoqd7wc18afj" path="res://characters/textures/servbot+0-0.tga" id="1_nmhdv"]
+[ext_resource type="Texture2D" uid="uid://sqgbvxp1uosx" path="res://characters/textures/servbot+0-1.tga" id="2_gi760"]
+
+[resource]
+frames = 2
+frame_0/texture = ExtResource("1_nmhdv")
+frame_1/texture = ExtResource("2_gi760")
+frame_1/duration = 0.2
