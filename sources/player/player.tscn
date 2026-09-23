@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cpq7gi016pc4i"]
+
+[ext_resource type="Script" uid="uid://cy2n5pegtahoo" path="res://sources/player/player.gd" id="1_6mcb7"]
+[ext_resource type="PackedScene" uid="uid://c3a6p01wxklcf" path="res://sources/player/controller/controller.tscn" id="1_xhrqs"]
+[ext_resource type="PackedScene" uid="uid://c3pmhhunn1icj" path="res://sources/player/highlighter/highlighter.tscn" id="2_hhpt7"]
+[ext_resource type="PackedScene" uid="uid://glp6e5viuk2y" path="res://sources/sensors/proximity.tscn" id="3_c3xfw"]
+[ext_resource type="PackedScene" uid="uid://c20777ho4ge14" path="res://characters/maps/servbot.map" id="3_hhpt7"]
+[ext_resource type="Script" uid="uid://dqbbtsale030y" path="res://sources/player/components/animations.gd" id="4_j2hga"]
+[ext_resource type="Script" uid="uid://dg0ek5us04kgj" path="res://sources/player/components/physics.gd" id="6_j2hga"]
+[ext_resource type="Script" uid="uid://bvn18m5fpcpbm" path="res://sources/player/components/selector.gd" id="7_hhpt7"]
+
+[node name="Player" type="Node3D" unique_id=204903554]
+script = ExtResource("1_6mcb7")
+
+[node name="CharacterBody3D" parent="." unique_id=157933444 instance=ExtResource("1_xhrqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+
+[node name="MeshInstance3D" parent="CharacterBody3D" unique_id=1271892564 instance=ExtResource("3_hhpt7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4965405, 0)
+script = ExtResource("4_j2hga")
+
+[node name="ProximitySensor3D" parent="CharacterBody3D" unique_id=619298737 instance=ExtResource("3_c3xfw")]
+directional = true
+collision_mask = 1073741824
+
+[node name="RigidBody3D" type="Node" parent="CharacterBody3D" unique_id=1676253670]
+script = ExtResource("6_j2hga")
+
+[node name="HighLighter3D" parent="." unique_id=408866960 instance=ExtResource("2_hhpt7")]
+
+[node name="Selector3D" type="Node" parent="." unique_id=249059869]
+script = ExtResource("7_hhpt7")
